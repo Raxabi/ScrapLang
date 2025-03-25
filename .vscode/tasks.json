@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "Compile Scrap",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+            "-g",
+            "-I${workspaceFolder}/includes",
+            "-Wall",
+            "-Wextra",
+            "-std=c++23",
+            "${workspaceFolder}/src/**/*.cc",
+            "-o",
+            "${workspaceFolder}/build/ccscrap"
+        ],
+        "icon": { "color": "terminal.ansiMagenta" },
+        "options": {
+            "cwd": "${fileDirname}"
+        }
+    }, {
+        "label": "Run simple test",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+            "-g",
+            "-Wall",
+            "-Wextra",
+            "-std=c++23",
+            "${workspaceFolder}/src/main.cc",
+            "-o",
+            "${workspaceFolder}/build/ccscrap"
+        ],
+        "icon": { "color": "terminal.ansiMagenta" },
+        "options": {
+            "cwd": "${fileDirname}"
+        }
+    }]
+}

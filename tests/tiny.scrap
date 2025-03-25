@@ -1,0 +1,6 @@
+module test {}
+
+fn main() {
+  const num = 10
+  std::print("Hola, Mundo")
+}

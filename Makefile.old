@@ -1,0 +1,27 @@
+CXX = g++
+CXXFLAGS = -Iincludes -Wall -Wextra -std=c++23
+LDFLAGS =
+SRC = $(wildcard ./src/*.cc)
+OBJ = $(subst ./src,./build/obj,$(SRC:.cc=.o))
+TARGET = ./build/ccscrap
+
+# Executable compilation
+$(TARGET): $(OBJ)
+	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
+
+# Object file compilation
+$(OBJ): $(SRC)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Main rule
+all: $(TARGET)
+
+# Clean intermediate file
+clean:
+	rm -f $(OBJ) $(TARGET)
+
+print-%:
+	@echo $* = $($*)
+
+# Phony targets
+.PHONY: all clean
