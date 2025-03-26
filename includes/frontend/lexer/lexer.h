@@ -27,8 +27,10 @@ public:
     int pos_line; // Position within the current line.
 
 
-// UTILITY FUNCTIONS
 private:
+
+    /* ---- UTILITY FUNCTIONS ---- */
+
     // Creates a Position object based on the current cursor position.
     const Position create_position() const;
 
@@ -40,8 +42,19 @@ private:
     // Creates a new token from the passed char
     const Token* create_token(char c);
 
-// Scanner private functions
-private:
+    // Checks if the current character matches the specified one.
+    bool check(char maybe);
+
+    // Checks if the end of the file has been reached.
+    bool has_end() const;
+
+    // Moves the cursor to the next character in the source code.
+    void advance();
+
+    // Moves the cursor forward by 'n' characters.
+    void advance_n(int n);
+
+    /* ---- SCANNER FUNCTIONS ---- */
 
     const Token* scan_colon();
 
@@ -63,18 +76,6 @@ private:
 public:
     // Constructor that initializes the lexer with a given file.
     Lexer(const char* filename);
-
-    // Checks if the current character matches the specified one.
-    bool check(char maybe);
-
-    // Checks if the end of the file has been reached.
-    bool has_end() const;
-
-    // Moves the cursor to the next character in the source code.
-    void advance();
-
-    // Moves the cursor forward by 'n' characters.
-    void advance_n(int n);
 
     // Scans and returns the next token in the source code.
     const Token* scan();

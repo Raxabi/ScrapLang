@@ -17,17 +17,6 @@ Lexer::Lexer(const char* filename):
     pos(cursor.pos), line(1), pos_line(1) {}
 
 
-void Lexer::advance() {
-    this->cursor.advance();
-}
-
-
-void Lexer::advance_n(int n) {
-    this->pos_line += n;
-    this->cursor.advance_n(n);
-}
-
-
 const Token* Lexer::scan_colon() {
     if (this->check(':')) {
         this->advance_n(2);

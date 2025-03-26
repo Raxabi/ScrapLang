@@ -16,6 +16,18 @@ bool Lexer::check(char c) {
     return this->cursor.check(c);
 }
 
+
+void Lexer::advance() {
+    this->cursor.advance();
+}
+
+
+void Lexer::advance_n(int n) {
+    this->pos_line += n;
+    this->cursor.advance_n(n);
+}
+
+
 const Position Lexer::create_position() const {
     return Position(this->pos, this->line, this->pos_line);
 }
