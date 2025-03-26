@@ -21,7 +21,7 @@ public:
     // Advance forwarding `n` characters from the current position
     void advance_n(long n);
     bool check(char c);
-    bool has_end();
+    bool has_end() const;
 };
 
 } // namespace Scan

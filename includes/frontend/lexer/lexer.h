@@ -68,7 +68,7 @@ public:
     bool check(char maybe);
 
     // Checks if the end of the file has been reached.
-    bool has_end();
+    bool has_end() const;
 
     // Moves the cursor to the next character in the source code.
     void advance();

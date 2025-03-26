@@ -29,7 +29,7 @@ bool Cursor::check(char c) {
     return this->source.peek() == c;
 }
 
-bool Cursor::has_end() {
+bool Cursor::has_end() const {
     return this->source.eof();
 }
 

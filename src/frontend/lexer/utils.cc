@@ -8,7 +8,7 @@
 namespace Scrap {
 namespace Scan {
 
-bool Lexer::has_end() {
+bool Lexer::has_end() const {
     return this->cursor.has_end();
 }
 
